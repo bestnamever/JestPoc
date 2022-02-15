@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Header from './components/Header';
-import UndoList, { listItem } from './components/List';
+import UndoList from './components/List';
 
 import './App.css';
 

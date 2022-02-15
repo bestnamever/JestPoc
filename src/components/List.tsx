@@ -69,7 +69,5 @@ const List: React.FC<IList> = (props) => {
 };
 
 export default List;
-function certainValue(index: number): React.MouseEventHandler<HTMLLIElement> {
-  throw new Error('Function not implemented.');
-}
+
 
