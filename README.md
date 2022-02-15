@@ -1,3 +1,1 @@
-# 不想痛失薪资普调和年终奖？试试自动化测试！（React 实战）
-
-用于测试 Jenkins
+PoC of Jest automated testing
