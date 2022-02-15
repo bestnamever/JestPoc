@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import List, { IList } from '../../components/List';
+import List, { IList, listItem } from '../../components/List';
 
 describe('List 组件', () => {
   it('组件初始化正常', () => {
@@ -9,7 +9,7 @@ describe('List 组件', () => {
       deleteItem: jest.fn(),
       changeStatus: jest.fn(),
       handleBlur: jest.fn(),
-      valueChange: jest.fn()
+      valueChange: jest.fn(),
     };
 
     const wrapper = render(<List {...props} />);
@@ -29,7 +29,7 @@ describe('List 组件', () => {
       deleteItem: jest.fn(),
       changeStatus: jest.fn(),
       handleBlur: jest.fn(),
-      valueChange: jest.fn()
+      valueChange: jest.fn(),
     };
 
     const wrapper = render(<List {...props} />);
@@ -63,7 +63,7 @@ describe('List 组件', () => {
       deleteItem: jest.fn(),
       changeStatus: jest.fn(),
       handleBlur: jest.fn(),
-      valueChange: jest.fn()
+      valueChange: jest.fn(),
     };
 
     const wrapper = render(<List {...props} />);
@@ -74,6 +74,11 @@ describe('List 组件', () => {
 
     // 点击第一项
     fireEvent.click(list[0]);
+    
+    // ceratinValue 被调用 参数为0
+    // expect(props.certainValue).toHaveBeenCalled()
+    // expect(props.certainValue).toHaveBeenCalledWith(0)
+    
     // changeStatus 被调用 参数为 0
     expect(props.changeStatus).toHaveBeenCalled();
     expect(props.changeStatus).toHaveBeenCalledWith(0);
@@ -91,5 +96,7 @@ describe('List 组件', () => {
     // handleBlur 被调用 参数为 1
     expect(props.handleBlur).toHaveBeenCalled();
     expect(props.handleBlur).toHaveBeenCalledWith(1);
+
+    
   });
 });

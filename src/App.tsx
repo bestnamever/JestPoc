@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Header from './components/Header';
-import UndoList from './components/List';
+import UndoList, { listItem } from './components/List';
 
 import './App.css';
 
 function App() {
+
   const [undoList, setUndoList] = useState([]);
 
   useEffect(() => {
     axios
-      .get('./undoList.json')
+      .get('/undoList.json')
       .then((res) => {
         setUndoList(res.data.data);
       })
-      .catch((e) => {});
+      .catch((e) => { });
   }, []);
 
   const valueChange = (index: number, value: string) => {
@@ -75,6 +76,7 @@ function App() {
     newList.splice(index, 1);
     setUndoList(newList);
   };
+
 
   return (
     <div>

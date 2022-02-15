@@ -16,7 +16,7 @@ const Header: React.FC<IHeader> = (props) => {
   };
   return (
     <div>
-      <div className="header">
+      <div className="header" data-testid="header">
         <div className="header-content">
           TodoList
           <input

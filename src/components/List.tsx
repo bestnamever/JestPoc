@@ -5,6 +5,12 @@ type TListItem = {
   value: string;
 };
 
+export interface listItem {
+  status: 'div' | 'input';
+  value: string;
+}
+
+
 export interface IList {
   list: TListItem[];
   deleteItem: (index: number) => void;
@@ -17,7 +23,7 @@ const List: React.FC<IList> = (props) => {
   const { list, changeStatus, handleBlur, valueChange, deleteItem } = props;
 
   return (
-    <div className="undo-list">
+    <div className="undo-list" data-testid="list">
       <div className="undo-list-title">
         In progess
         <div data-testid="count" className="undo-list-count">
@@ -31,7 +37,7 @@ const List: React.FC<IList> = (props) => {
               className="undo-list-item"
               data-testid="list-item"
               key={index}
-              onClick={() => changeStatus(index)}
+              onClick={() => { changeStatus(index) }}
             >
               {item.status === 'div' ? (
                 item.value
@@ -63,3 +69,7 @@ const List: React.FC<IList> = (props) => {
 };
 
 export default List;
+function certainValue(index: number): React.MouseEventHandler<HTMLLIElement> {
+  throw new Error('Function not implemented.');
+}
+
