@@ -19,7 +19,7 @@ const List: React.FC<IList> = (props) => {
   return (
     <div className="undo-list">
       <div className="undo-list-title">
-        正在进行
+        In progess
         <div data-testid="count" className="undo-list-count">
           {list.length}
         </div>
