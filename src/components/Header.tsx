@@ -9,7 +9,7 @@ const Header: React.FC<IHeader> = (props) => {
   const { addUndoItem } = props;
 
   const handleInputKeyUp = (e: React.KeyboardEvent) => {
-    if (e.keyCode === 13 && value) {
+    if (e.key === "Enter" && value) {
       addUndoItem(value);
       setValue('');
     }

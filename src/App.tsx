@@ -10,7 +10,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get('/undoList.json')
+      .get('./undoList.json')
       .then((res) => {
         setUndoList(res.data.data);
       })
