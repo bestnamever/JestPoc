@@ -96,7 +96,5 @@ describe('List 组件', () => {
     // handleBlur 被调用 参数为 1
     expect(props.handleBlur).toHaveBeenCalled();
     expect(props.handleBlur).toHaveBeenCalledWith(1);
-
-    
   });
 });
